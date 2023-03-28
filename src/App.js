@@ -6,7 +6,10 @@ function App() {
   const [usersList, setUsersList] = useState([]);
   const addUserHander = (uName, uAge) => {
     setUsersList((prevState) => {
-      return [...prevState, { name: uName, age: uAge }];
+      return [
+        ...prevState,
+        { name: uName, age: uAge, id: prevState.length + 1 },
+      ];
     });
   };
   return (
